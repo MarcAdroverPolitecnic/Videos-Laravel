@@ -1,4 +1,4 @@
-@props(['active'=>false])
+@props(['active'=> false])
 
 <a aria-current="{{ $active ? 'page': 'false' }}"
    class="{{ $active ? 'bg-gray-900 text-white': 'text-gray-300 hover:bg-gray-700 hover:text-white' }}
