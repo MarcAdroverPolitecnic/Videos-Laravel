@@ -1,15 +1,13 @@
 <?php
 
 namespace App\Models;
+
+use Database\Factories\EmployerFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
 
-class  Job extends Model{
-
-    protected $table = 'job_listings';
-
-    protected $fillable = ['title', 'salary'];
-
+class Employer extends Model
+{
+    /** @use HasFactory<EmployerFactory> */
     use HasFactory;
 }
