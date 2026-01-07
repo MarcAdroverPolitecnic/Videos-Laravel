@@ -41,9 +41,7 @@ Route::view('/', 'home');
 
 //Això d'adalt passa a ser simplement aquesta comanda de abaix
 
-Route::resource('jobs', JobController::class, [
-    'only'
-]);
+Route::resource('jobs', JobController::class);
 
 //Route::get('/contact', function () {
 //    return view('contact');
