@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home');
 
+//Route::get('/contact', function () {
+//    return view('contact');
+//});
 
+Route::view('/contact', 'contact');
 
 /*Route::controller(JobController::class)->group(function (){
 
@@ -42,20 +46,24 @@ Route::view('/', 'home');
 });*/
 
 //Això d'adalt passa a ser simplement aquesta comanda de abaix
+//Route::resource('jobs', JobController::class);
 
-Route::resource('jobs', JobController::class);
+Route::get('/jobs', [JobController::class, 'index']);
+Route::get('/jobs/create', [JobController::class, 'create']);
+Route::post('/jobs', [JobController::class, 'store'])->middleware('auth');
+Route::get('/jobs/{id}', [JobController::class, 'show']);
 
-//Route::get('/contact', function () {
-//    return view('contact');
-//});
+Route::get('/jobs/{id}/edit', [JobController::class, 'edit'])
+    ->middleware('auth')
+    ->can('edit', 'job');
 
-Route::view('/contact', 'contact');
-
+Route::patch('/jobs/{id}', [JobController::class, 'update'])->middleware('auth');
+Route::delete('/jobs/{id}', [JobController::class, 'destroy'])->middleware('auth');
 
 
 Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
-Route::get('/login', [SessionController::class, 'create']);
+Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
