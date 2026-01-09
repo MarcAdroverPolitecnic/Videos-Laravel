@@ -6,8 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$/example/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/example/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/example/tests" isTestSource="true" packagePrefix="Tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/example/tests/Feature" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/example/tests/Unit" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/example/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/example/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/example/vendor/carbonphp/carbon-doctrine-types" />
