@@ -26,8 +26,8 @@ class JobController extends Controller
         return view('jobs.create');
     }
 
-    public function show(Job $job){
-
+    public function show(Job $job)
+    {
         return view('jobs.show', ['job' => $job]);
     }
 
@@ -45,7 +45,7 @@ class JobController extends Controller
             'employer_id' => 1
         ]);
 
-        Mail::to($job->employer->user)->send(
+        Mail::to($job->employer->user)->queue(
             new JobPosted($job)
         );
 
